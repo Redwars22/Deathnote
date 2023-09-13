@@ -69,7 +69,7 @@ Public Class MainForm
             str = "palavra"
         End If
 
-        WordCounter.Text = wordcount.ToString() + str
+        WordCounter.Text = wordcount.ToString() + " " + str
     End Sub
 
     Private Sub DeathNoteEditor_TextChanged(sender As Object, e As EventArgs) Handles DeathNoteEditor.TextChanged
@@ -77,6 +77,6 @@ Public Class MainForm
     End Sub
 
     Private Sub AjudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjudaToolStripMenuItem.Click
-        MsgBox("aaa", MsgBoxStyle.Information, "Sobre o Deathnote")
+        MsgBox("© 2023. AndrewNation. Todos os Direitos Reservados", MsgBoxStyle.Information, "Sobre o Deathnote para Windows")
     End Sub
 End Class
