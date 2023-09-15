@@ -22,7 +22,6 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(MainForm))
         MenuStrip1 = New MenuStrip()
         ArquivoToolStripMenuItem = New ToolStripMenuItem()
@@ -67,7 +66,6 @@ Partial Class MainForm
         StatusStrip1 = New StatusStrip()
         OpenFileName = New ToolStripStatusLabel()
         WordCounter = New ToolStripStatusLabel()
-        NotifyIcon1 = New NotifyIcon(components)
         MenuStrip1.SuspendLayout()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -105,7 +103,6 @@ Partial Class MainForm
         ' 
         ' NovoToolStripMenuItem
         ' 
-        NovoToolStripMenuItem.Enabled = False
         NovoToolStripMenuItem.Name = "NovoToolStripMenuItem"
         NovoToolStripMenuItem.Size = New Size(105, 22)
         NovoToolStripMenuItem.Text = "Novo"
@@ -117,7 +114,6 @@ Partial Class MainForm
         ' 
         ' SairToolStripMenuItem
         ' 
-        SairToolStripMenuItem.Enabled = False
         SairToolStripMenuItem.Name = "SairToolStripMenuItem"
         SairToolStripMenuItem.Size = New Size(105, 22)
         SairToolStripMenuItem.Text = "Sair"
@@ -133,61 +129,61 @@ Partial Class MainForm
         ' FonteToolStripMenuItem
         ' 
         FonteToolStripMenuItem.Name = "FonteToolStripMenuItem"
-        FonteToolStripMenuItem.Size = New Size(180, 22)
+        FonteToolStripMenuItem.Size = New Size(158, 22)
         FonteToolStripMenuItem.Text = "Fonte"
         ' 
         ' CorDoTextoToolStripMenuItem
         ' 
         CorDoTextoToolStripMenuItem.Name = "CorDoTextoToolStripMenuItem"
-        CorDoTextoToolStripMenuItem.Size = New Size(180, 22)
+        CorDoTextoToolStripMenuItem.Size = New Size(158, 22)
         CorDoTextoToolStripMenuItem.Text = "Cor do Texto"
         ' 
         ' ToolStripSeparator2
         ' 
         ToolStripSeparator2.Name = "ToolStripSeparator2"
-        ToolStripSeparator2.Size = New Size(177, 6)
+        ToolStripSeparator2.Size = New Size(155, 6)
         ' 
         ' DesfazerToolStripMenuItem
         ' 
         DesfazerToolStripMenuItem.Name = "DesfazerToolStripMenuItem"
-        DesfazerToolStripMenuItem.Size = New Size(180, 22)
+        DesfazerToolStripMenuItem.Size = New Size(158, 22)
         DesfazerToolStripMenuItem.Text = "Desfazer"
         ' 
         ' ToolStripSeparator3
         ' 
         ToolStripSeparator3.Name = "ToolStripSeparator3"
-        ToolStripSeparator3.Size = New Size(177, 6)
+        ToolStripSeparator3.Size = New Size(155, 6)
         ' 
         ' CopiarToolStripMenuItem
         ' 
         CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
-        CopiarToolStripMenuItem.Size = New Size(180, 22)
+        CopiarToolStripMenuItem.Size = New Size(158, 22)
         CopiarToolStripMenuItem.Text = "Copiar"
         ' 
         ' ColarToolStripMenuItem
         ' 
         ColarToolStripMenuItem.Name = "ColarToolStripMenuItem"
-        ColarToolStripMenuItem.Size = New Size(180, 22)
+        ColarToolStripMenuItem.Size = New Size(158, 22)
         ColarToolStripMenuItem.Text = "Colar"
         ' 
         ' DeletarToolStripMenuItem
         ' 
         DeletarToolStripMenuItem.Enabled = False
         DeletarToolStripMenuItem.Name = "DeletarToolStripMenuItem"
-        DeletarToolStripMenuItem.Size = New Size(180, 22)
+        DeletarToolStripMenuItem.Size = New Size(158, 22)
         DeletarToolStripMenuItem.Text = "Deletar"
         ' 
         ' SelecionarTudoToolStripMenuItem
         ' 
         SelecionarTudoToolStripMenuItem.Name = "SelecionarTudoToolStripMenuItem"
-        SelecionarTudoToolStripMenuItem.Size = New Size(180, 22)
+        SelecionarTudoToolStripMenuItem.Size = New Size(158, 22)
         SelecionarTudoToolStripMenuItem.Text = "Selecionar Tudo"
         ' 
         ' RecortarToolStripMenuItem
         ' 
         RecortarToolStripMenuItem.Enabled = False
         RecortarToolStripMenuItem.Name = "RecortarToolStripMenuItem"
-        RecortarToolStripMenuItem.Size = New Size(180, 22)
+        RecortarToolStripMenuItem.Size = New Size(158, 22)
         RecortarToolStripMenuItem.Text = "Recortar"
         ' 
         ' ExibirToolStripMenuItem
@@ -201,51 +197,50 @@ Partial Class MainForm
         ' TemaToolStripMenuItem
         ' 
         TemaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClaroToolStripMenuItem, EscuroToolStripMenuItem})
-        TemaToolStripMenuItem.Enabled = False
         TemaToolStripMenuItem.Name = "TemaToolStripMenuItem"
-        TemaToolStripMenuItem.Size = New Size(152, 22)
+        TemaToolStripMenuItem.Size = New Size(180, 22)
         TemaToolStripMenuItem.Text = "Tema"
         ' 
         ' ClaroToolStripMenuItem
         ' 
         ClaroToolStripMenuItem.Name = "ClaroToolStripMenuItem"
-        ClaroToolStripMenuItem.Size = New Size(109, 22)
+        ClaroToolStripMenuItem.Size = New Size(180, 22)
         ClaroToolStripMenuItem.Text = "Claro"
         ' 
         ' EscuroToolStripMenuItem
         ' 
         EscuroToolStripMenuItem.Name = "EscuroToolStripMenuItem"
-        EscuroToolStripMenuItem.Size = New Size(109, 22)
+        EscuroToolStripMenuItem.Size = New Size(180, 22)
         EscuroToolStripMenuItem.Text = "Escuro"
         ' 
         ' ToolStripSeparator4
         ' 
         ToolStripSeparator4.Name = "ToolStripSeparator4"
-        ToolStripSeparator4.Size = New Size(149, 6)
+        ToolStripSeparator4.Size = New Size(177, 6)
         ' 
         ' ZoomToolStripMenuItem
         ' 
         ZoomToolStripMenuItem.Enabled = False
         ZoomToolStripMenuItem.Name = "ZoomToolStripMenuItem"
-        ZoomToolStripMenuItem.Size = New Size(152, 22)
+        ZoomToolStripMenuItem.Size = New Size(180, 22)
         ZoomToolStripMenuItem.Text = "Zoom +"
         ' 
         ' ZoomToolStripMenuItem1
         ' 
         ZoomToolStripMenuItem1.Enabled = False
         ZoomToolStripMenuItem1.Name = "ZoomToolStripMenuItem1"
-        ZoomToolStripMenuItem1.Size = New Size(152, 22)
+        ZoomToolStripMenuItem1.Size = New Size(180, 22)
         ZoomToolStripMenuItem1.Text = "Zoom -"
         ' 
         ' ToolStripSeparator5
         ' 
         ToolStripSeparator5.Name = "ToolStripSeparator5"
-        ToolStripSeparator5.Size = New Size(149, 6)
+        ToolStripSeparator5.Size = New Size(177, 6)
         ' 
         ' BarraDeStatusToolStripMenuItem
         ' 
         BarraDeStatusToolStripMenuItem.Name = "BarraDeStatusToolStripMenuItem"
-        BarraDeStatusToolStripMenuItem.Size = New Size(152, 22)
+        BarraDeStatusToolStripMenuItem.Size = New Size(180, 22)
         BarraDeStatusToolStripMenuItem.Text = "Barra de Status"
         ' 
         ' InserirToolStripMenuItem
@@ -337,9 +332,11 @@ Partial Class MainForm
         ' 
         ' OpenFileName
         ' 
-        OpenFileName.ForeColor = Color.DodgerBlue
+        OpenFileName.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        OpenFileName.ForeColor = Color.Silver
+        OpenFileName.LinkColor = Color.Silver
         OpenFileName.Name = "OpenFileName"
-        OpenFileName.Size = New Size(138, 17)
+        OpenFileName.Size = New Size(144, 17)
         OpenFileName.Text = "Nenhum Arquivo Aberto"
         ' 
         ' WordCounter
@@ -348,11 +345,6 @@ Partial Class MainForm
         WordCounter.Name = "WordCounter"
         WordCounter.Size = New Size(59, 17)
         WordCounter.Text = "0 palavras"
-        ' 
-        ' NotifyIcon1
-        ' 
-        NotifyIcon1.Text = "NotifyIcon1"
-        NotifyIcon1.Visible = True
         ' 
         ' MainForm
         ' 
@@ -401,7 +393,6 @@ Partial Class MainForm
     Friend WithEvents HTMLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ParágrafoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents OpenFileName As ToolStripStatusLabel
     Friend WithEvents WordCounter As ToolStripStatusLabel
     Friend WithEvents SobreODeathnoteToolStripMenuItem As ToolStripMenuItem

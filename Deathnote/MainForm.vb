@@ -5,17 +5,62 @@ Public Class MainForm
     Dim fileTypes As String = ""
     Dim clipboard As String
     Dim statusBarVisible As Boolean = True
+    Dim theme As String
+
+    Public Function CheckIfTextSavedBeforeExiting() As Boolean
+        If DeathNoteEditor.Text <> "" Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Public Sub HandleTheme()
+        If theme = "dark" Then
+            EscuroToolStripMenuItem.Checked = True
+            ClaroToolStripMenuItem.Checked = False
+            DeathNoteEditor.BackColor = System.Drawing.SystemColors.ControlDarkDark
+            DeathNoteEditor.ForeColor = Color.White
+            StatusStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+            StatusStrip1.ForeColor = Color.Silver
+            MenuStrip1.BackColor = Color.FromArgb(64, 64, 64)
+            MenuStrip1.ForeColor = Color.DarkGray
+            Me.Opacity = 95
+        Else
+            EscuroToolStripMenuItem.Checked = False
+            ClaroToolStripMenuItem.Checked = True
+            DeathNoteEditor.BackColor = Color.LightGray
+            DeathNoteEditor.ForeColor = Color.FromArgb(64, 64, 64)
+            StatusStrip1.BackColor = Color.GhostWhite
+            StatusStrip1.ForeColor = Color.DarkGray
+            'MenuStrip1.BackColor = Color.GhostWhite
+            'MenuStrip1.ForeColor = Color.DarkGray
+            Me.Opacity = 100
+        End If
+    End Sub
+
+    Public Sub HandleSave()
+        'SaveFileDialog1.Filter = "Arquivo Deathnote (*.dth^)|*.dth^"'
+
+        If SaveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, DeathNoteEditor.Text, FileAccess.Write)
+        End If
+    End Sub
 
     Private Sub UpdateText(text As String)
         DeathNoteEditor.Text = text
     End Sub
+
     Private Sub LoadWelcomeText()
         Dim welcome As String = "welcome.txt"
         Dim content As String = System.IO.File.ReadAllText(welcome)
         UpdateText(content)
     End Sub
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadWelcomeText()
+        theme = "dark"
+        HandleTheme()
 
         If statusBarVisible Then
             BarraDeStatusToolStripMenuItem.Checked = statusBarVisible
@@ -47,11 +92,7 @@ Public Class MainForm
     End Sub
 
     Private Sub SalvarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalvarToolStripMenuItem.Click
-        'SaveFileDialog1.Filter = "Arquivo Deathnote (*.dth^)|*.dth^"'
-
-        If SaveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, DeathNoteEditor.Text, FileAccess.Write)
-        End If
+        HandleSave()
     End Sub
 
     Private Sub FonteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FonteToolStripMenuItem.Click
@@ -124,5 +165,56 @@ Public Class MainForm
 
     Private Sub CopiarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarToolStripMenuItem.Click
         Clipboard = DeathNoteEditor.SelectedText
+    End Sub
+
+    Private Sub StatusStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles StatusStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub HandleResetText()
+        DeathNoteEditor.Text = ""
+        OpenFileName.Text = "Arquivo novo"
+    End Sub
+
+    Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoToolStripMenuItem.Click
+        Dim checkBefore As Boolean = CheckIfTextSavedBeforeExiting()
+
+        If checkBefore Then
+            MsgBox("Você deseja salvar as alterações antes de prosseguir?", MsgBoxStyle.Exclamation, "Ei, espera!")
+
+            If MsgBoxResult.Yes Then
+                HandleSave()
+                HandleResetText()
+                Return
+            End If
+        End If
+
+        HandleResetText()
+    End Sub
+
+    Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
+        Dim checkBefore As Boolean = CheckIfTextSavedBeforeExiting()
+
+        If checkBefore Then
+            MsgBox("Você deseja salvar as alterações antes de prosseguir?", MsgBoxStyle.Exclamation, "Ei, espera!")
+
+            If MsgBoxResult.Yes Then
+                HandleSave()
+                Me.Close()
+                Return
+            End If
+        End If
+
+        Me.Close()
+    End Sub
+
+    Private Sub ClaroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClaroToolStripMenuItem.Click
+        theme = "light"
+        HandleTheme()
+    End Sub
+
+    Private Sub EscuroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EscuroToolStripMenuItem.Click
+        theme = "dark"
+        HandleTheme()
     End Sub
 End Class
