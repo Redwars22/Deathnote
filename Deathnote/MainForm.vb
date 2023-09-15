@@ -1,7 +1,10 @@
 ﻿Imports System.IO
+Imports System.Drawing.Printing
 
 Public Class MainForm
     Dim fileTypes As String = ""
+    Dim clipboard As String
+    Dim statusBarVisible As Boolean = True
 
     Private Sub UpdateText(text As String)
         DeathNoteEditor.Text = text
@@ -13,6 +16,10 @@ Public Class MainForm
     End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadWelcomeText()
+
+        If statusBarVisible Then
+            BarraDeStatusToolStripMenuItem.Checked = statusBarVisible
+        End If
     End Sub
 
     Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog1.FileOk
@@ -30,6 +37,7 @@ Public Class MainForm
             Try
                 OpenFileDialog1.OpenFile()
                 fileReader = System.IO.File.OpenText(OpenFileDialog1.FileName)
+                OpenFileName.Text = OpenFileDialog1.FileName
                 DeathNoteEditor.Text = fileReader.ReadToEnd()
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -78,5 +86,43 @@ Public Class MainForm
 
     Private Sub AjudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjudaToolStripMenuItem.Click
         MsgBox("© 2023. AndrewNation. Todos os Direitos Reservados", MsgBoxStyle.Information, "Sobre o Deathnote para Windows")
+    End Sub
+
+    Private Sub SelecionarTudoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelecionarTudoToolStripMenuItem.Click
+        DeathNoteEditor.SelectAll()
+    End Sub
+
+    Private Sub DesfazerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DesfazerToolStripMenuItem.Click
+        DeathNoteEditor.Undo()
+    End Sub
+
+    Private Sub BarraDeStatusToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarraDeStatusToolStripMenuItem.Click
+        If statusBarVisible Then
+            statusBarVisible = False
+        Else
+            statusBarVisible = True
+        End If
+
+        BarraDeStatusToolStripMenuItem.Checked = statusBarVisible
+        StatusStrip1.Visible = statusBarVisible
+    End Sub
+
+    Private Sub ColarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColarToolStripMenuItem.Click
+        If clipboard IsNot "" Then
+            DeathNoteEditor.Text += clipboard
+            clipboard = ""
+            Return
+        End If
+
+        DeathNoteEditor.Paste()
+    End Sub
+
+    Private Sub RecortarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecortarToolStripMenuItem.Click
+        'Clipboard = DeathNoteEditor.SelectedText
+        'DeathNoteEditor.Text = DeathNoteEditor.Text.Remove(DeathNoteEditor.SelectedText, DeathNoteEditor.SelectionLength)
+    End Sub
+
+    Private Sub CopiarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarToolStripMenuItem.Click
+        Clipboard = DeathNoteEditor.SelectedText
     End Sub
 End Class
