@@ -172,7 +172,7 @@ Public Class MainForm
 
     Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoToolStripMenuItem.Click
         Dim newWindow As New MainForm
-        newWindow.ShowDialog()
+        newWindow.Show()
     End Sub
 
     Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
@@ -238,5 +238,11 @@ Public Class MainForm
 
     Private Sub DataEHoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataEHoraToolStripMenuItem.Click
         DeathNoteEditor.SelectedText = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+    End Sub
+
+    Private Async Sub PréviaHTMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PréviaHTMLToolStripMenuItem.Click
+        Dim src = DeathNoteEditor.Text
+        HTMLView.Show()
+        Await HTMLView.WebView21.ExecuteScriptAsync("document.body.innerHTML = '" + src + "'")
     End Sub
 End Class

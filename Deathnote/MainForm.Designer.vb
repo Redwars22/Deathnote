@@ -57,20 +57,6 @@ Partial Class MainForm
         InserirToolStripMenuItem = New ToolStripMenuItem()
         MarkdownToolStripMenuItem = New ToolStripMenuItem()
         TítuloToolStripMenuItem = New ToolStripMenuItem()
-        HTMLToolStripMenuItem = New ToolStripMenuItem()
-        ParágrafoToolStripMenuItem = New ToolStripMenuItem()
-        DataEHoraToolStripMenuItem = New ToolStripMenuItem()
-        AjudaToolStripMenuItem = New ToolStripMenuItem()
-        SobreODeathnoteToolStripMenuItem = New ToolStripMenuItem()
-        NotasDeVersãoToolStripMenuItem = New ToolStripMenuItem()
-        DeathNoteEditor = New RichTextBox()
-        OpenFileDialog1 = New OpenFileDialog()
-        SaveFileDialog1 = New SaveFileDialog()
-        ColorDialog1 = New ColorDialog()
-        FontDialog1 = New FontDialog()
-        StatusStrip1 = New StatusStrip()
-        OpenFileName = New ToolStripStatusLabel()
-        WordCounter = New ToolStripStatusLabel()
         SubtítuloNível1ToolStripMenuItem = New ToolStripMenuItem()
         SubtítuloNível2ToolStripMenuItem = New ToolStripMenuItem()
         LinhaHorizontalToolStripMenuItem = New ToolStripMenuItem()
@@ -84,6 +70,8 @@ Partial Class MainForm
         BlocoDeCódigoToolStripMenuItem = New ToolStripMenuItem()
         CódigoToolStripMenuItem = New ToolStripMenuItem()
         ItemDeListaToolStripMenuItem = New ToolStripMenuItem()
+        HTMLToolStripMenuItem = New ToolStripMenuItem()
+        ParágrafoToolStripMenuItem = New ToolStripMenuItem()
         SpanToolStripMenuItem = New ToolStripMenuItem()
         H1ToolStripMenuItem = New ToolStripMenuItem()
         H2ToolStripMenuItem = New ToolStripMenuItem()
@@ -105,6 +93,18 @@ Partial Class MainForm
         HeaderToolStripMenuItem = New ToolStripMenuItem()
         MainToolStripMenuItem = New ToolStripMenuItem()
         SectionToolStripMenuItem = New ToolStripMenuItem()
+        DataEHoraToolStripMenuItem = New ToolStripMenuItem()
+        AjudaToolStripMenuItem = New ToolStripMenuItem()
+        SobreODeathnoteToolStripMenuItem = New ToolStripMenuItem()
+        NotasDeVersãoToolStripMenuItem = New ToolStripMenuItem()
+        DeathNoteEditor = New RichTextBox()
+        OpenFileDialog1 = New OpenFileDialog()
+        SaveFileDialog1 = New SaveFileDialog()
+        ColorDialog1 = New ColorDialog()
+        FontDialog1 = New FontDialog()
+        StatusStrip1 = New StatusStrip()
+        OpenFileName = New ToolStripStatusLabel()
+        WordCounter = New ToolStripStatusLabel()
         MenuStrip1.SuspendLayout()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -303,7 +303,6 @@ Partial Class MainForm
         ' 
         ' PréviaHTMLToolStripMenuItem
         ' 
-        PréviaHTMLToolStripMenuItem.Enabled = False
         PréviaHTMLToolStripMenuItem.Name = "PréviaHTMLToolStripMenuItem"
         PréviaHTMLToolStripMenuItem.Size = New Size(152, 22)
         PréviaHTMLToolStripMenuItem.Text = "Prévia HTML"
@@ -321,21 +320,97 @@ Partial Class MainForm
         MarkdownToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TítuloToolStripMenuItem, SubtítuloNível1ToolStripMenuItem, SubtítuloNível2ToolStripMenuItem, LinhaHorizontalToolStripMenuItem, ToolStripSeparator6, NegritoToolStripMenuItem, ItálicoToolStripMenuItem, ItálicoENegritoToolStripMenuItem, ToolStripSeparator7, LinkToolStripMenuItem, CitaçãoToolStripMenuItem, BlocoDeCódigoToolStripMenuItem, CódigoToolStripMenuItem, ItemDeListaToolStripMenuItem})
         MarkdownToolStripMenuItem.Enabled = False
         MarkdownToolStripMenuItem.Name = "MarkdownToolStripMenuItem"
-        MarkdownToolStripMenuItem.Size = New Size(180, 22)
+        MarkdownToolStripMenuItem.Size = New Size(136, 22)
         MarkdownToolStripMenuItem.Text = "Markdown"
         ' 
         ' TítuloToolStripMenuItem
         ' 
         TítuloToolStripMenuItem.Name = "TítuloToolStripMenuItem"
-        TítuloToolStripMenuItem.Size = New Size(180, 22)
+        TítuloToolStripMenuItem.Size = New Size(162, 22)
         TítuloToolStripMenuItem.Text = "Título"
+        ' 
+        ' SubtítuloNível1ToolStripMenuItem
+        ' 
+        SubtítuloNível1ToolStripMenuItem.Name = "SubtítuloNível1ToolStripMenuItem"
+        SubtítuloNível1ToolStripMenuItem.Size = New Size(162, 22)
+        SubtítuloNível1ToolStripMenuItem.Text = "Subtítulo Nível 1"
+        ' 
+        ' SubtítuloNível2ToolStripMenuItem
+        ' 
+        SubtítuloNível2ToolStripMenuItem.Name = "SubtítuloNível2ToolStripMenuItem"
+        SubtítuloNível2ToolStripMenuItem.Size = New Size(162, 22)
+        SubtítuloNível2ToolStripMenuItem.Text = "Subtítulo Nível 2"
+        ' 
+        ' LinhaHorizontalToolStripMenuItem
+        ' 
+        LinhaHorizontalToolStripMenuItem.Name = "LinhaHorizontalToolStripMenuItem"
+        LinhaHorizontalToolStripMenuItem.Size = New Size(162, 22)
+        LinhaHorizontalToolStripMenuItem.Text = "Linha Horizontal"
+        ' 
+        ' ToolStripSeparator6
+        ' 
+        ToolStripSeparator6.Name = "ToolStripSeparator6"
+        ToolStripSeparator6.Size = New Size(159, 6)
+        ' 
+        ' NegritoToolStripMenuItem
+        ' 
+        NegritoToolStripMenuItem.Name = "NegritoToolStripMenuItem"
+        NegritoToolStripMenuItem.Size = New Size(162, 22)
+        NegritoToolStripMenuItem.Text = "Negrito"
+        ' 
+        ' ItálicoToolStripMenuItem
+        ' 
+        ItálicoToolStripMenuItem.Name = "ItálicoToolStripMenuItem"
+        ItálicoToolStripMenuItem.Size = New Size(162, 22)
+        ItálicoToolStripMenuItem.Text = "Itálico"
+        ' 
+        ' ItálicoENegritoToolStripMenuItem
+        ' 
+        ItálicoENegritoToolStripMenuItem.Name = "ItálicoENegritoToolStripMenuItem"
+        ItálicoENegritoToolStripMenuItem.Size = New Size(162, 22)
+        ItálicoENegritoToolStripMenuItem.Text = "Itálico e Negrito"
+        ' 
+        ' ToolStripSeparator7
+        ' 
+        ToolStripSeparator7.Name = "ToolStripSeparator7"
+        ToolStripSeparator7.Size = New Size(159, 6)
+        ' 
+        ' LinkToolStripMenuItem
+        ' 
+        LinkToolStripMenuItem.Name = "LinkToolStripMenuItem"
+        LinkToolStripMenuItem.Size = New Size(162, 22)
+        LinkToolStripMenuItem.Text = "Link"
+        ' 
+        ' CitaçãoToolStripMenuItem
+        ' 
+        CitaçãoToolStripMenuItem.Name = "CitaçãoToolStripMenuItem"
+        CitaçãoToolStripMenuItem.Size = New Size(162, 22)
+        CitaçãoToolStripMenuItem.Text = "Citação"
+        ' 
+        ' BlocoDeCódigoToolStripMenuItem
+        ' 
+        BlocoDeCódigoToolStripMenuItem.Name = "BlocoDeCódigoToolStripMenuItem"
+        BlocoDeCódigoToolStripMenuItem.Size = New Size(162, 22)
+        BlocoDeCódigoToolStripMenuItem.Text = "Bloco de Código"
+        ' 
+        ' CódigoToolStripMenuItem
+        ' 
+        CódigoToolStripMenuItem.Name = "CódigoToolStripMenuItem"
+        CódigoToolStripMenuItem.Size = New Size(162, 22)
+        CódigoToolStripMenuItem.Text = "Código"
+        ' 
+        ' ItemDeListaToolStripMenuItem
+        ' 
+        ItemDeListaToolStripMenuItem.Name = "ItemDeListaToolStripMenuItem"
+        ItemDeListaToolStripMenuItem.Size = New Size(162, 22)
+        ItemDeListaToolStripMenuItem.Text = "Item de Lista"
         ' 
         ' HTMLToolStripMenuItem
         ' 
         HTMLToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ParágrafoToolStripMenuItem, SpanToolStripMenuItem, H1ToolStripMenuItem, H2ToolStripMenuItem, H3ToolStripMenuItem, H4ToolStripMenuItem, H5ToolStripMenuItem, H6ToolStripMenuItem, ToolStripSeparator8, InputToolStripMenuItem, ImagemToolStripMenuItem, LinkToolStripMenuItem1, BotãoToolStripMenuItem, DivToolStripMenuItem, ToolStripSeparator9, ScriptToolStripMenuItem, FolhaDeEstiloExternaToolStripMenuItem, ScriptExternoToolStripMenuItem, EstruturaBásicaToolStripMenuItem, HeaderToolStripMenuItem, MainToolStripMenuItem, SectionToolStripMenuItem})
         HTMLToolStripMenuItem.Enabled = False
         HTMLToolStripMenuItem.Name = "HTMLToolStripMenuItem"
-        HTMLToolStripMenuItem.Size = New Size(180, 22)
+        HTMLToolStripMenuItem.Size = New Size(136, 22)
         HTMLToolStripMenuItem.Text = "HTML"
         ' 
         ' ParágrafoToolStripMenuItem
@@ -343,152 +418,6 @@ Partial Class MainForm
         ParágrafoToolStripMenuItem.Name = "ParágrafoToolStripMenuItem"
         ParágrafoToolStripMenuItem.Size = New Size(192, 22)
         ParágrafoToolStripMenuItem.Text = "Parágrafo"
-        ' 
-        ' DataEHoraToolStripMenuItem
-        ' 
-        DataEHoraToolStripMenuItem.Name = "DataEHoraToolStripMenuItem"
-        DataEHoraToolStripMenuItem.Size = New Size(180, 22)
-        DataEHoraToolStripMenuItem.Text = "Data e Hora"
-        ' 
-        ' AjudaToolStripMenuItem
-        ' 
-        AjudaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SobreODeathnoteToolStripMenuItem, NotasDeVersãoToolStripMenuItem})
-        AjudaToolStripMenuItem.ForeColor = Color.White
-        AjudaToolStripMenuItem.Name = "AjudaToolStripMenuItem"
-        AjudaToolStripMenuItem.Size = New Size(50, 20)
-        AjudaToolStripMenuItem.Text = "Ajuda"
-        ' 
-        ' SobreODeathnoteToolStripMenuItem
-        ' 
-        SobreODeathnoteToolStripMenuItem.Name = "SobreODeathnoteToolStripMenuItem"
-        SobreODeathnoteToolStripMenuItem.Size = New Size(172, 22)
-        SobreODeathnoteToolStripMenuItem.Text = "Sobre o Deathnote"
-        ' 
-        ' NotasDeVersãoToolStripMenuItem
-        ' 
-        NotasDeVersãoToolStripMenuItem.Enabled = False
-        NotasDeVersãoToolStripMenuItem.Name = "NotasDeVersãoToolStripMenuItem"
-        NotasDeVersãoToolStripMenuItem.Size = New Size(172, 22)
-        NotasDeVersãoToolStripMenuItem.Text = "Notas de Versão"
-        ' 
-        ' DeathNoteEditor
-        ' 
-        DeathNoteEditor.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        DeathNoteEditor.BorderStyle = BorderStyle.None
-        DeathNoteEditor.Dock = DockStyle.Fill
-        DeathNoteEditor.Font = New Font("Liberation Mono", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DeathNoteEditor.ForeColor = Color.White
-        DeathNoteEditor.Location = New Point(0, 24)
-        DeathNoteEditor.Name = "DeathNoteEditor"
-        DeathNoteEditor.Size = New Size(696, 426)
-        DeathNoteEditor.TabIndex = 1
-        DeathNoteEditor.Text = ""
-        ' 
-        ' OpenFileDialog1
-        ' 
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        ' 
-        ' StatusStrip1
-        ' 
-        StatusStrip1.BackColor = SystemColors.ControlDarkDark
-        StatusStrip1.Items.AddRange(New ToolStripItem() {OpenFileName, WordCounter})
-        StatusStrip1.Location = New Point(0, 428)
-        StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(696, 22)
-        StatusStrip1.TabIndex = 2
-        StatusStrip1.Text = "StatusStrip1"
-        ' 
-        ' OpenFileName
-        ' 
-        OpenFileName.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        OpenFileName.ForeColor = Color.Silver
-        OpenFileName.LinkColor = Color.Silver
-        OpenFileName.Name = "OpenFileName"
-        OpenFileName.Size = New Size(144, 17)
-        OpenFileName.Text = "Nenhum Arquivo Aberto"
-        ' 
-        ' WordCounter
-        ' 
-        WordCounter.ForeColor = Color.Silver
-        WordCounter.Name = "WordCounter"
-        WordCounter.Size = New Size(59, 17)
-        WordCounter.Text = "0 palavras"
-        ' 
-        ' SubtítuloNível1ToolStripMenuItem
-        ' 
-        SubtítuloNível1ToolStripMenuItem.Name = "SubtítuloNível1ToolStripMenuItem"
-        SubtítuloNível1ToolStripMenuItem.Size = New Size(180, 22)
-        SubtítuloNível1ToolStripMenuItem.Text = "Subtítulo Nível 1"
-        ' 
-        ' SubtítuloNível2ToolStripMenuItem
-        ' 
-        SubtítuloNível2ToolStripMenuItem.Name = "SubtítuloNível2ToolStripMenuItem"
-        SubtítuloNível2ToolStripMenuItem.Size = New Size(180, 22)
-        SubtítuloNível2ToolStripMenuItem.Text = "Subtítulo Nível 2"
-        ' 
-        ' LinhaHorizontalToolStripMenuItem
-        ' 
-        LinhaHorizontalToolStripMenuItem.Name = "LinhaHorizontalToolStripMenuItem"
-        LinhaHorizontalToolStripMenuItem.Size = New Size(180, 22)
-        LinhaHorizontalToolStripMenuItem.Text = "Linha Horizontal"
-        ' 
-        ' ToolStripSeparator6
-        ' 
-        ToolStripSeparator6.Name = "ToolStripSeparator6"
-        ToolStripSeparator6.Size = New Size(177, 6)
-        ' 
-        ' NegritoToolStripMenuItem
-        ' 
-        NegritoToolStripMenuItem.Name = "NegritoToolStripMenuItem"
-        NegritoToolStripMenuItem.Size = New Size(180, 22)
-        NegritoToolStripMenuItem.Text = "Negrito"
-        ' 
-        ' ItálicoToolStripMenuItem
-        ' 
-        ItálicoToolStripMenuItem.Name = "ItálicoToolStripMenuItem"
-        ItálicoToolStripMenuItem.Size = New Size(180, 22)
-        ItálicoToolStripMenuItem.Text = "Itálico"
-        ' 
-        ' ItálicoENegritoToolStripMenuItem
-        ' 
-        ItálicoENegritoToolStripMenuItem.Name = "ItálicoENegritoToolStripMenuItem"
-        ItálicoENegritoToolStripMenuItem.Size = New Size(180, 22)
-        ItálicoENegritoToolStripMenuItem.Text = "Itálico e Negrito"
-        ' 
-        ' ToolStripSeparator7
-        ' 
-        ToolStripSeparator7.Name = "ToolStripSeparator7"
-        ToolStripSeparator7.Size = New Size(177, 6)
-        ' 
-        ' LinkToolStripMenuItem
-        ' 
-        LinkToolStripMenuItem.Name = "LinkToolStripMenuItem"
-        LinkToolStripMenuItem.Size = New Size(180, 22)
-        LinkToolStripMenuItem.Text = "Link"
-        ' 
-        ' CitaçãoToolStripMenuItem
-        ' 
-        CitaçãoToolStripMenuItem.Name = "CitaçãoToolStripMenuItem"
-        CitaçãoToolStripMenuItem.Size = New Size(180, 22)
-        CitaçãoToolStripMenuItem.Text = "Citação"
-        ' 
-        ' BlocoDeCódigoToolStripMenuItem
-        ' 
-        BlocoDeCódigoToolStripMenuItem.Name = "BlocoDeCódigoToolStripMenuItem"
-        BlocoDeCódigoToolStripMenuItem.Size = New Size(180, 22)
-        BlocoDeCódigoToolStripMenuItem.Text = "Bloco de Código"
-        ' 
-        ' CódigoToolStripMenuItem
-        ' 
-        CódigoToolStripMenuItem.Name = "CódigoToolStripMenuItem"
-        CódigoToolStripMenuItem.Size = New Size(180, 22)
-        CódigoToolStripMenuItem.Text = "Código"
-        ' 
-        ' ItemDeListaToolStripMenuItem
-        ' 
-        ItemDeListaToolStripMenuItem.Name = "ItemDeListaToolStripMenuItem"
-        ItemDeListaToolStripMenuItem.Size = New Size(180, 22)
-        ItemDeListaToolStripMenuItem.Text = "Item de Lista"
         ' 
         ' SpanToolStripMenuItem
         ' 
@@ -614,6 +543,76 @@ Partial Class MainForm
         SectionToolStripMenuItem.Size = New Size(192, 22)
         SectionToolStripMenuItem.Text = "Section"
         ' 
+        ' DataEHoraToolStripMenuItem
+        ' 
+        DataEHoraToolStripMenuItem.Name = "DataEHoraToolStripMenuItem"
+        DataEHoraToolStripMenuItem.Size = New Size(136, 22)
+        DataEHoraToolStripMenuItem.Text = "Data e Hora"
+        ' 
+        ' AjudaToolStripMenuItem
+        ' 
+        AjudaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SobreODeathnoteToolStripMenuItem, NotasDeVersãoToolStripMenuItem})
+        AjudaToolStripMenuItem.ForeColor = Color.White
+        AjudaToolStripMenuItem.Name = "AjudaToolStripMenuItem"
+        AjudaToolStripMenuItem.Size = New Size(50, 20)
+        AjudaToolStripMenuItem.Text = "Ajuda"
+        ' 
+        ' SobreODeathnoteToolStripMenuItem
+        ' 
+        SobreODeathnoteToolStripMenuItem.Name = "SobreODeathnoteToolStripMenuItem"
+        SobreODeathnoteToolStripMenuItem.Size = New Size(172, 22)
+        SobreODeathnoteToolStripMenuItem.Text = "Sobre o Deathnote"
+        ' 
+        ' NotasDeVersãoToolStripMenuItem
+        ' 
+        NotasDeVersãoToolStripMenuItem.Enabled = False
+        NotasDeVersãoToolStripMenuItem.Name = "NotasDeVersãoToolStripMenuItem"
+        NotasDeVersãoToolStripMenuItem.Size = New Size(172, 22)
+        NotasDeVersãoToolStripMenuItem.Text = "Notas de Versão"
+        ' 
+        ' DeathNoteEditor
+        ' 
+        DeathNoteEditor.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        DeathNoteEditor.BorderStyle = BorderStyle.None
+        DeathNoteEditor.Dock = DockStyle.Fill
+        DeathNoteEditor.Font = New Font("Liberation Mono", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DeathNoteEditor.ForeColor = Color.White
+        DeathNoteEditor.Location = New Point(0, 24)
+        DeathNoteEditor.Name = "DeathNoteEditor"
+        DeathNoteEditor.Size = New Size(696, 426)
+        DeathNoteEditor.TabIndex = 1
+        DeathNoteEditor.Text = ""
+        ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        ' 
+        ' StatusStrip1
+        ' 
+        StatusStrip1.BackColor = SystemColors.ControlDarkDark
+        StatusStrip1.Items.AddRange(New ToolStripItem() {OpenFileName, WordCounter})
+        StatusStrip1.Location = New Point(0, 428)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(696, 22)
+        StatusStrip1.TabIndex = 2
+        StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' OpenFileName
+        ' 
+        OpenFileName.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        OpenFileName.ForeColor = Color.Silver
+        OpenFileName.LinkColor = Color.Silver
+        OpenFileName.Name = "OpenFileName"
+        OpenFileName.Size = New Size(144, 17)
+        OpenFileName.Text = "Nenhum Arquivo Aberto"
+        ' 
+        ' WordCounter
+        ' 
+        WordCounter.ForeColor = Color.Silver
+        WordCounter.Name = "WordCounter"
+        WordCounter.Size = New Size(59, 17)
+        WordCounter.Text = "0 palavras"
+        ' 
         ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -628,7 +627,7 @@ Partial Class MainForm
         Name = "MainForm"
         Opacity = 0.95R
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Deathnote"
+        Text = "Deathnote Release Preview"
         WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
