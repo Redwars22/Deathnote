@@ -34,6 +34,7 @@ Partial Class MainForm
         FonteToolStripMenuItem = New ToolStripMenuItem()
         CorDoTextoToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator2 = New ToolStripSeparator()
+        ToolStripMenuItem2 = New ToolStripMenuItem()
         DesfazerToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator3 = New ToolStripSeparator()
         CopiarToolStripMenuItem = New ToolStripMenuItem()
@@ -46,8 +47,10 @@ Partial Class MainForm
         ClaroToolStripMenuItem = New ToolStripMenuItem()
         EscuroToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator4 = New ToolStripSeparator()
-        ZoomToolStripMenuItem = New ToolStripMenuItem()
-        ZoomToolStripMenuItem1 = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripMenuItem()
+        ZoomToolStripMenuItem2 = New ToolStripMenuItem()
+        NormalToolStripMenuItem = New ToolStripMenuItem()
+        ZoomToolStripMenuItem3 = New ToolStripMenuItem()
         ToolStripSeparator5 = New ToolStripSeparator()
         BarraDeStatusToolStripMenuItem = New ToolStripMenuItem()
         InserirToolStripMenuItem = New ToolStripMenuItem()
@@ -66,6 +69,8 @@ Partial Class MainForm
         StatusStrip1 = New StatusStrip()
         OpenFileName = New ToolStripStatusLabel()
         WordCounter = New ToolStripStatusLabel()
+        DataEHoraToolStripMenuItem = New ToolStripMenuItem()
+        PréviaHTMLToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -120,7 +125,7 @@ Partial Class MainForm
         ' 
         ' EditarToolStripMenuItem
         ' 
-        EditarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FonteToolStripMenuItem, CorDoTextoToolStripMenuItem, ToolStripSeparator2, DesfazerToolStripMenuItem, ToolStripSeparator3, CopiarToolStripMenuItem, ColarToolStripMenuItem, DeletarToolStripMenuItem, SelecionarTudoToolStripMenuItem, RecortarToolStripMenuItem})
+        EditarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FonteToolStripMenuItem, CorDoTextoToolStripMenuItem, ToolStripSeparator2, ToolStripMenuItem2, DesfazerToolStripMenuItem, ToolStripSeparator3, CopiarToolStripMenuItem, ColarToolStripMenuItem, DeletarToolStripMenuItem, SelecionarTudoToolStripMenuItem, RecortarToolStripMenuItem})
         EditarToolStripMenuItem.ForeColor = Color.White
         EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
         EditarToolStripMenuItem.Size = New Size(49, 20)
@@ -142,6 +147,12 @@ Partial Class MainForm
         ' 
         ToolStripSeparator2.Name = "ToolStripSeparator2"
         ToolStripSeparator2.Size = New Size(155, 6)
+        ' 
+        ' ToolStripMenuItem2
+        ' 
+        ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        ToolStripMenuItem2.Size = New Size(158, 22)
+        ToolStripMenuItem2.Text = "Refazer"
         ' 
         ' DesfazerToolStripMenuItem
         ' 
@@ -168,7 +179,6 @@ Partial Class MainForm
         ' 
         ' DeletarToolStripMenuItem
         ' 
-        DeletarToolStripMenuItem.Enabled = False
         DeletarToolStripMenuItem.Name = "DeletarToolStripMenuItem"
         DeletarToolStripMenuItem.Size = New Size(158, 22)
         DeletarToolStripMenuItem.Text = "Deletar"
@@ -181,14 +191,13 @@ Partial Class MainForm
         ' 
         ' RecortarToolStripMenuItem
         ' 
-        RecortarToolStripMenuItem.Enabled = False
         RecortarToolStripMenuItem.Name = "RecortarToolStripMenuItem"
         RecortarToolStripMenuItem.Size = New Size(158, 22)
         RecortarToolStripMenuItem.Text = "Recortar"
         ' 
         ' ExibirToolStripMenuItem
         ' 
-        ExibirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TemaToolStripMenuItem, ToolStripSeparator4, ZoomToolStripMenuItem, ZoomToolStripMenuItem1, ToolStripSeparator5, BarraDeStatusToolStripMenuItem})
+        ExibirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TemaToolStripMenuItem, ToolStripSeparator4, ToolStripMenuItem1, ToolStripSeparator5, BarraDeStatusToolStripMenuItem, PréviaHTMLToolStripMenuItem})
         ExibirToolStripMenuItem.ForeColor = Color.White
         ExibirToolStripMenuItem.Name = "ExibirToolStripMenuItem"
         ExibirToolStripMenuItem.Size = New Size(48, 20)
@@ -204,13 +213,13 @@ Partial Class MainForm
         ' ClaroToolStripMenuItem
         ' 
         ClaroToolStripMenuItem.Name = "ClaroToolStripMenuItem"
-        ClaroToolStripMenuItem.Size = New Size(180, 22)
+        ClaroToolStripMenuItem.Size = New Size(109, 22)
         ClaroToolStripMenuItem.Text = "Claro"
         ' 
         ' EscuroToolStripMenuItem
         ' 
         EscuroToolStripMenuItem.Name = "EscuroToolStripMenuItem"
-        EscuroToolStripMenuItem.Size = New Size(180, 22)
+        EscuroToolStripMenuItem.Size = New Size(109, 22)
         EscuroToolStripMenuItem.Text = "Escuro"
         ' 
         ' ToolStripSeparator4
@@ -218,19 +227,32 @@ Partial Class MainForm
         ToolStripSeparator4.Name = "ToolStripSeparator4"
         ToolStripSeparator4.Size = New Size(177, 6)
         ' 
-        ' ZoomToolStripMenuItem
+        ' ToolStripMenuItem1
         ' 
-        ZoomToolStripMenuItem.Enabled = False
-        ZoomToolStripMenuItem.Name = "ZoomToolStripMenuItem"
-        ZoomToolStripMenuItem.Size = New Size(180, 22)
-        ZoomToolStripMenuItem.Text = "Zoom +"
+        ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {ZoomToolStripMenuItem2, NormalToolStripMenuItem, ZoomToolStripMenuItem3})
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(180, 22)
+        ToolStripMenuItem1.Text = "Zoom"
         ' 
-        ' ZoomToolStripMenuItem1
+        ' ZoomToolStripMenuItem2
         ' 
-        ZoomToolStripMenuItem1.Enabled = False
-        ZoomToolStripMenuItem1.Name = "ZoomToolStripMenuItem1"
-        ZoomToolStripMenuItem1.Size = New Size(180, 22)
-        ZoomToolStripMenuItem1.Text = "Zoom -"
+        ZoomToolStripMenuItem2.Name = "ZoomToolStripMenuItem2"
+        ZoomToolStripMenuItem2.Size = New Size(117, 22)
+        ZoomToolStripMenuItem2.Text = "Zoom +"
+        ' 
+        ' NormalToolStripMenuItem
+        ' 
+        NormalToolStripMenuItem.Checked = True
+        NormalToolStripMenuItem.CheckState = CheckState.Checked
+        NormalToolStripMenuItem.Name = "NormalToolStripMenuItem"
+        NormalToolStripMenuItem.Size = New Size(117, 22)
+        NormalToolStripMenuItem.Text = "Normal"
+        ' 
+        ' ZoomToolStripMenuItem3
+        ' 
+        ZoomToolStripMenuItem3.Name = "ZoomToolStripMenuItem3"
+        ZoomToolStripMenuItem3.Size = New Size(117, 22)
+        ZoomToolStripMenuItem3.Text = "Zoom -"
         ' 
         ' ToolStripSeparator5
         ' 
@@ -239,13 +261,15 @@ Partial Class MainForm
         ' 
         ' BarraDeStatusToolStripMenuItem
         ' 
+        BarraDeStatusToolStripMenuItem.Checked = True
+        BarraDeStatusToolStripMenuItem.CheckState = CheckState.Checked
         BarraDeStatusToolStripMenuItem.Name = "BarraDeStatusToolStripMenuItem"
         BarraDeStatusToolStripMenuItem.Size = New Size(180, 22)
         BarraDeStatusToolStripMenuItem.Text = "Barra de Status"
         ' 
         ' InserirToolStripMenuItem
         ' 
-        InserirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MarkdownToolStripMenuItem, HTMLToolStripMenuItem})
+        InserirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MarkdownToolStripMenuItem, HTMLToolStripMenuItem, DataEHoraToolStripMenuItem})
         InserirToolStripMenuItem.ForeColor = Color.White
         InserirToolStripMenuItem.Name = "InserirToolStripMenuItem"
         InserirToolStripMenuItem.Size = New Size(51, 20)
@@ -256,7 +280,7 @@ Partial Class MainForm
         MarkdownToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TítuloToolStripMenuItem})
         MarkdownToolStripMenuItem.Enabled = False
         MarkdownToolStripMenuItem.Name = "MarkdownToolStripMenuItem"
-        MarkdownToolStripMenuItem.Size = New Size(131, 22)
+        MarkdownToolStripMenuItem.Size = New Size(180, 22)
         MarkdownToolStripMenuItem.Text = "Markdown"
         ' 
         ' TítuloToolStripMenuItem
@@ -270,7 +294,7 @@ Partial Class MainForm
         HTMLToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ParágrafoToolStripMenuItem})
         HTMLToolStripMenuItem.Enabled = False
         HTMLToolStripMenuItem.Name = "HTMLToolStripMenuItem"
-        HTMLToolStripMenuItem.Size = New Size(131, 22)
+        HTMLToolStripMenuItem.Size = New Size(180, 22)
         HTMLToolStripMenuItem.Text = "HTML"
         ' 
         ' ParágrafoToolStripMenuItem
@@ -317,9 +341,6 @@ Partial Class MainForm
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
-        ' SaveFileDialog1
-        ' 
-        ' 
         ' StatusStrip1
         ' 
         StatusStrip1.BackColor = SystemColors.ControlDarkDark
@@ -345,6 +366,19 @@ Partial Class MainForm
         WordCounter.Name = "WordCounter"
         WordCounter.Size = New Size(59, 17)
         WordCounter.Text = "0 palavras"
+        ' 
+        ' DataEHoraToolStripMenuItem
+        ' 
+        DataEHoraToolStripMenuItem.Name = "DataEHoraToolStripMenuItem"
+        DataEHoraToolStripMenuItem.Size = New Size(180, 22)
+        DataEHoraToolStripMenuItem.Text = "Data e Hora"
+        ' 
+        ' PréviaHTMLToolStripMenuItem
+        ' 
+        PréviaHTMLToolStripMenuItem.Enabled = False
+        PréviaHTMLToolStripMenuItem.Name = "PréviaHTMLToolStripMenuItem"
+        PréviaHTMLToolStripMenuItem.Size = New Size(180, 22)
+        PréviaHTMLToolStripMenuItem.Text = "Prévia HTML"
         ' 
         ' MainForm
         ' 
@@ -409,8 +443,13 @@ Partial Class MainForm
     Friend WithEvents SelecionarTudoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecortarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents ZoomToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ZoomToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents BarraDeStatusToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ZoomToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents NormalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ZoomToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents DataEHoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PréviaHTMLToolStripMenuItem As ToolStripMenuItem
 End Class

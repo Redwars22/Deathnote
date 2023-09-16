@@ -42,6 +42,9 @@ Public Class MainForm
     Public Sub HandleSave()
         'SaveFileDialog1.Filter = "Arquivo Deathnote (*.dth^)|*.dth^"'
 
+        SaveFileDialog1.CheckFileExists = True
+        SaveFileDialog1.CheckPathExists = True
+
         If SaveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, DeathNoteEditor.Text, FileAccess.Write)
         End If
@@ -65,10 +68,6 @@ Public Class MainForm
         If statusBarVisible Then
             BarraDeStatusToolStripMenuItem.Checked = statusBarVisible
         End If
-    End Sub
-
-    Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog1.FileOk
-
     End Sub
 
     Private Sub AbrirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrirToolStripMenuItem.Click
@@ -126,7 +125,7 @@ Public Class MainForm
     End Sub
 
     Private Sub AjudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjudaToolStripMenuItem.Click
-        MsgBox("© 2023. AndrewNation. Todos os Direitos Reservados", MsgBoxStyle.Information, "Sobre o Deathnote para Windows")
+
     End Sub
 
     Private Sub SelecionarTudoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelecionarTudoToolStripMenuItem.Click
@@ -159,8 +158,8 @@ Public Class MainForm
     End Sub
 
     Private Sub RecortarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecortarToolStripMenuItem.Click
-        'Clipboard = DeathNoteEditor.SelectedText
-        'DeathNoteEditor.Text = DeathNoteEditor.Text.Remove(DeathNoteEditor.SelectedText, DeathNoteEditor.SelectionLength)
+        clipboard = DeathNoteEditor.SelectedText
+        DeathNoteEditor.Text = DeathNoteEditor.Text.Remove(DeathNoteEditor.SelectedText, DeathNoteEditor.SelectionLength)
     End Sub
 
     Private Sub CopiarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarToolStripMenuItem.Click
@@ -171,32 +170,16 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub HandleResetText()
-        DeathNoteEditor.Text = ""
-        OpenFileName.Text = "Arquivo novo"
-    End Sub
-
     Private Sub NovoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoToolStripMenuItem.Click
-        Dim checkBefore As Boolean = CheckIfTextSavedBeforeExiting()
-
-        If checkBefore Then
-            MsgBox("Você deseja salvar as alterações antes de prosseguir?", MsgBoxStyle.Exclamation, "Ei, espera!")
-
-            If MsgBoxResult.Yes Then
-                HandleSave()
-                HandleResetText()
-                Return
-            End If
-        End If
-
-        HandleResetText()
+        Dim newWindow As New MainForm
+        newWindow.ShowDialog()
     End Sub
 
     Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
         Dim checkBefore As Boolean = CheckIfTextSavedBeforeExiting()
 
         If checkBefore Then
-            MsgBox("Você deseja salvar as alterações antes de prosseguir?", MsgBoxStyle.Exclamation, "Ei, espera!")
+            MsgBox("Você tem alterações que não foram salvas!", MsgBoxStyle.Question, "Ei, espera!")
 
             If MsgBoxResult.Yes Then
                 HandleSave()
@@ -216,5 +199,44 @@ Public Class MainForm
     Private Sub EscuroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EscuroToolStripMenuItem.Click
         theme = "dark"
         HandleTheme()
+    End Sub
+
+    Private Sub ZoomToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ZoomToolStripMenuItem2.Click
+        DeathNoteEditor.ZoomFactor = 2.0F
+        ZoomToolStripMenuItem2.Checked = True
+        NormalToolStripMenuItem.Checked = False
+        ZoomToolStripMenuItem3.Checked = False
+    End Sub
+
+    Private Sub NormalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NormalToolStripMenuItem.Click
+        DeathNoteEditor.ZoomFactor = 1.0F
+        ZoomToolStripMenuItem2.Checked = False
+        NormalToolStripMenuItem.Checked = True
+        ZoomToolStripMenuItem3.Checked = False
+    End Sub
+
+    Private Sub ZoomToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ZoomToolStripMenuItem3.Click
+        DeathNoteEditor.ZoomFactor = 0.9F
+        ZoomToolStripMenuItem2.Checked = False
+        NormalToolStripMenuItem.Checked = False
+        ZoomToolStripMenuItem3.Checked = True
+    End Sub
+
+    Private Sub SobreODeathnoteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SobreODeathnoteToolStripMenuItem.Click
+        MsgBox("© 2023. AndrewNation. Todos os Direitos Reservados", MsgBoxStyle.Information, "Sobre o Deathnote para Windows")
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        DeathNoteEditor.Redo()
+    End Sub
+
+    Private Sub DeletarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeletarToolStripMenuItem.Click
+        If DeathNoteEditor.SelectionLength > 0 Then
+            DeathNoteEditor.Text = ""
+        End If
+    End Sub
+
+    Private Sub DataEHoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataEHoraToolStripMenuItem.Click
+
     End Sub
 End Class
