@@ -237,6 +237,6 @@ Public Class MainForm
     End Sub
 
     Private Sub DataEHoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataEHoraToolStripMenuItem.Click
-
+        DeathNoteEditor.SelectedText = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     End Sub
 End Class
