@@ -55,9 +55,9 @@ Public Class MainForm
     End Sub
 
     Private Sub LoadWelcomeText()
-        Dim welcome As String = "welcome.txt"
-        Dim content As String = System.IO.File.ReadAllText(welcome)
-        UpdateText(content)
+        'Dim welcome As String = "welcome.txt"
+        'Dim content As String = System.IO.File.ReadAllText(welcome)
+        'UpdateText(content)
     End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -243,7 +243,8 @@ Public Class MainForm
     Private Async Sub PréviaHTMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PréviaHTMLToolStripMenuItem.Click
         Dim src = DeathNoteEditor.Text
         HTMLView.Show()
-        Await HTMLView.WebView21.ExecuteScriptAsync("document.body.innerHTML = '" + src + "'")
+        Await HTMLView.WebView21.EnsureCoreWebView2Async()
+        Await HTMLView.WebView21.ExecuteScriptAsync("document.body.innerHTML = " + Chr(34) + src + Chr(34))
     End Sub
 
     Private Sub HandleHTMLWrapTag(tag As String)
@@ -342,5 +343,15 @@ Public Class MainForm
 
     Private Sub ScriptExternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScriptExternoToolStripMenuItem.Click
         HandleAddHTMLSnippet("script-ext")
+    End Sub
+
+    Private Sub QuebraDeLinhaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuebraDeLinhaToolStripMenuItem.Click
+        If DeathNoteEditor.WordWrap Then
+            DeathNoteEditor.WordWrap = False
+            QuebraDeLinhaToolStripMenuItem.Checked = False
+        Else
+            DeathNoteEditor.WordWrap = True
+            QuebraDeLinhaToolStripMenuItem.Checked = True
+        End If
     End Sub
 End Class

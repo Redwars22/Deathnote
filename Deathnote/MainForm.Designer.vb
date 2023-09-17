@@ -104,6 +104,7 @@ Partial Class MainForm
         StatusStrip1 = New StatusStrip()
         OpenFileName = New ToolStripStatusLabel()
         WordCounter = New ToolStripStatusLabel()
+        QuebraDeLinhaToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -230,7 +231,7 @@ Partial Class MainForm
         ' 
         ' ExibirToolStripMenuItem
         ' 
-        ExibirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TemaToolStripMenuItem, ToolStripSeparator4, ToolStripMenuItem1, ToolStripSeparator5, BarraDeStatusToolStripMenuItem, PréviaHTMLToolStripMenuItem})
+        ExibirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TemaToolStripMenuItem, ToolStripSeparator4, ToolStripMenuItem1, ToolStripSeparator5, BarraDeStatusToolStripMenuItem, PréviaHTMLToolStripMenuItem, QuebraDeLinhaToolStripMenuItem})
         ExibirToolStripMenuItem.ForeColor = Color.White
         ExibirToolStripMenuItem.Name = "ExibirToolStripMenuItem"
         ExibirToolStripMenuItem.Size = New Size(48, 20)
@@ -240,7 +241,7 @@ Partial Class MainForm
         ' 
         TemaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClaroToolStripMenuItem, EscuroToolStripMenuItem})
         TemaToolStripMenuItem.Name = "TemaToolStripMenuItem"
-        TemaToolStripMenuItem.Size = New Size(152, 22)
+        TemaToolStripMenuItem.Size = New Size(180, 22)
         TemaToolStripMenuItem.Text = "Tema"
         ' 
         ' ClaroToolStripMenuItem
@@ -258,13 +259,13 @@ Partial Class MainForm
         ' ToolStripSeparator4
         ' 
         ToolStripSeparator4.Name = "ToolStripSeparator4"
-        ToolStripSeparator4.Size = New Size(149, 6)
+        ToolStripSeparator4.Size = New Size(177, 6)
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {ZoomToolStripMenuItem2, NormalToolStripMenuItem, ZoomToolStripMenuItem3})
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(152, 22)
+        ToolStripMenuItem1.Size = New Size(180, 22)
         ToolStripMenuItem1.Text = "Zoom"
         ' 
         ' ZoomToolStripMenuItem2
@@ -290,20 +291,20 @@ Partial Class MainForm
         ' ToolStripSeparator5
         ' 
         ToolStripSeparator5.Name = "ToolStripSeparator5"
-        ToolStripSeparator5.Size = New Size(149, 6)
+        ToolStripSeparator5.Size = New Size(177, 6)
         ' 
         ' BarraDeStatusToolStripMenuItem
         ' 
         BarraDeStatusToolStripMenuItem.Checked = True
         BarraDeStatusToolStripMenuItem.CheckState = CheckState.Checked
         BarraDeStatusToolStripMenuItem.Name = "BarraDeStatusToolStripMenuItem"
-        BarraDeStatusToolStripMenuItem.Size = New Size(152, 22)
+        BarraDeStatusToolStripMenuItem.Size = New Size(180, 22)
         BarraDeStatusToolStripMenuItem.Text = "Barra de Status"
         ' 
         ' PréviaHTMLToolStripMenuItem
         ' 
         PréviaHTMLToolStripMenuItem.Name = "PréviaHTMLToolStripMenuItem"
-        PréviaHTMLToolStripMenuItem.Size = New Size(152, 22)
+        PréviaHTMLToolStripMenuItem.Size = New Size(180, 22)
         PréviaHTMLToolStripMenuItem.Text = "Prévia HTML"
         ' 
         ' InserirToolStripMenuItem
@@ -566,7 +567,7 @@ Partial Class MainForm
         ' DeathNoteEditor
         ' 
         DeathNoteEditor.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        DeathNoteEditor.BorderStyle = BorderStyle.None
+        DeathNoteEditor.BorderStyle = BorderStyle.FixedSingle
         DeathNoteEditor.Dock = DockStyle.Fill
         DeathNoteEditor.Font = New Font("Liberation Mono", 12F, FontStyle.Regular, GraphicsUnit.Point)
         DeathNoteEditor.ForeColor = Color.White
@@ -605,6 +606,14 @@ Partial Class MainForm
         WordCounter.Name = "WordCounter"
         WordCounter.Size = New Size(59, 17)
         WordCounter.Text = "0 palavras"
+        ' 
+        ' QuebraDeLinhaToolStripMenuItem
+        ' 
+        QuebraDeLinhaToolStripMenuItem.Checked = True
+        QuebraDeLinhaToolStripMenuItem.CheckState = CheckState.Checked
+        QuebraDeLinhaToolStripMenuItem.Name = "QuebraDeLinhaToolStripMenuItem"
+        QuebraDeLinhaToolStripMenuItem.Size = New Size(180, 22)
+        QuebraDeLinhaToolStripMenuItem.Text = "Quebra de Linha"
         ' 
         ' MainForm
         ' 
@@ -711,4 +720,5 @@ Partial Class MainForm
     Friend WithEvents EstruturaBásicaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HeaderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MainToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuebraDeLinhaToolStripMenuItem As ToolStripMenuItem
 End Class
