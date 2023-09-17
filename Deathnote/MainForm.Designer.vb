@@ -92,7 +92,6 @@ Partial Class MainForm
         EstruturaBásicaToolStripMenuItem = New ToolStripMenuItem()
         HeaderToolStripMenuItem = New ToolStripMenuItem()
         MainToolStripMenuItem = New ToolStripMenuItem()
-        SectionToolStripMenuItem = New ToolStripMenuItem()
         DataEHoraToolStripMenuItem = New ToolStripMenuItem()
         AjudaToolStripMenuItem = New ToolStripMenuItem()
         SobreODeathnoteToolStripMenuItem = New ToolStripMenuItem()
@@ -320,7 +319,7 @@ Partial Class MainForm
         MarkdownToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TítuloToolStripMenuItem, SubtítuloNível1ToolStripMenuItem, SubtítuloNível2ToolStripMenuItem, LinhaHorizontalToolStripMenuItem, ToolStripSeparator6, NegritoToolStripMenuItem, ItálicoToolStripMenuItem, ItálicoENegritoToolStripMenuItem, ToolStripSeparator7, LinkToolStripMenuItem, CitaçãoToolStripMenuItem, BlocoDeCódigoToolStripMenuItem, CódigoToolStripMenuItem, ItemDeListaToolStripMenuItem})
         MarkdownToolStripMenuItem.Enabled = False
         MarkdownToolStripMenuItem.Name = "MarkdownToolStripMenuItem"
-        MarkdownToolStripMenuItem.Size = New Size(136, 22)
+        MarkdownToolStripMenuItem.Size = New Size(180, 22)
         MarkdownToolStripMenuItem.Text = "Markdown"
         ' 
         ' TítuloToolStripMenuItem
@@ -407,10 +406,9 @@ Partial Class MainForm
         ' 
         ' HTMLToolStripMenuItem
         ' 
-        HTMLToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ParágrafoToolStripMenuItem, SpanToolStripMenuItem, H1ToolStripMenuItem, H2ToolStripMenuItem, H3ToolStripMenuItem, H4ToolStripMenuItem, H5ToolStripMenuItem, H6ToolStripMenuItem, ToolStripSeparator8, InputToolStripMenuItem, ImagemToolStripMenuItem, LinkToolStripMenuItem1, BotãoToolStripMenuItem, DivToolStripMenuItem, ToolStripSeparator9, ScriptToolStripMenuItem, FolhaDeEstiloExternaToolStripMenuItem, ScriptExternoToolStripMenuItem, EstruturaBásicaToolStripMenuItem, HeaderToolStripMenuItem, MainToolStripMenuItem, SectionToolStripMenuItem})
-        HTMLToolStripMenuItem.Enabled = False
+        HTMLToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ParágrafoToolStripMenuItem, SpanToolStripMenuItem, H1ToolStripMenuItem, H2ToolStripMenuItem, H3ToolStripMenuItem, H4ToolStripMenuItem, H5ToolStripMenuItem, H6ToolStripMenuItem, ToolStripSeparator8, InputToolStripMenuItem, ImagemToolStripMenuItem, LinkToolStripMenuItem1, BotãoToolStripMenuItem, DivToolStripMenuItem, ToolStripSeparator9, ScriptToolStripMenuItem, FolhaDeEstiloExternaToolStripMenuItem, ScriptExternoToolStripMenuItem, EstruturaBásicaToolStripMenuItem, HeaderToolStripMenuItem, MainToolStripMenuItem})
         HTMLToolStripMenuItem.Name = "HTMLToolStripMenuItem"
-        HTMLToolStripMenuItem.Size = New Size(136, 22)
+        HTMLToolStripMenuItem.Size = New Size(180, 22)
         HTMLToolStripMenuItem.Text = "HTML"
         ' 
         ' ParágrafoToolStripMenuItem
@@ -521,6 +519,7 @@ Partial Class MainForm
         ' 
         ' EstruturaBásicaToolStripMenuItem
         ' 
+        EstruturaBásicaToolStripMenuItem.Enabled = False
         EstruturaBásicaToolStripMenuItem.Name = "EstruturaBásicaToolStripMenuItem"
         EstruturaBásicaToolStripMenuItem.Size = New Size(192, 22)
         EstruturaBásicaToolStripMenuItem.Text = "Estrutura Básica"
@@ -537,16 +536,10 @@ Partial Class MainForm
         MainToolStripMenuItem.Size = New Size(192, 22)
         MainToolStripMenuItem.Text = "Main"
         ' 
-        ' SectionToolStripMenuItem
-        ' 
-        SectionToolStripMenuItem.Name = "SectionToolStripMenuItem"
-        SectionToolStripMenuItem.Size = New Size(192, 22)
-        SectionToolStripMenuItem.Text = "Section"
-        ' 
         ' DataEHoraToolStripMenuItem
         ' 
         DataEHoraToolStripMenuItem.Name = "DataEHoraToolStripMenuItem"
-        DataEHoraToolStripMenuItem.Size = New Size(136, 22)
+        DataEHoraToolStripMenuItem.Size = New Size(180, 22)
         DataEHoraToolStripMenuItem.Text = "Data e Hora"
         ' 
         ' AjudaToolStripMenuItem
@@ -718,5 +711,4 @@ Partial Class MainForm
     Friend WithEvents EstruturaBásicaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HeaderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MainToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SectionToolStripMenuItem As ToolStripMenuItem
 End Class

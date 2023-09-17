@@ -245,4 +245,102 @@ Public Class MainForm
         HTMLView.Show()
         Await HTMLView.WebView21.ExecuteScriptAsync("document.body.innerHTML = '" + src + "'")
     End Sub
+
+    Private Sub HandleHTMLWrapTag(tag As String)
+        DeathNoteEditor.SelectedText = "<" + tag + ">" + DeathNoteEditor.SelectedText + "</" + tag + ">"
+    End Sub
+
+    Private Sub HandleAddHTMLSnippet(type As String)
+        Dim snippet As String = ""
+
+        If type = "img" Then
+            snippet = "<img src=" & Chr(34) & Chr(34) & " alt=" & Chr(34) & Chr(34) & "/>"
+        ElseIf type = "input" Then
+            snippet = "<input type=" & Chr(34) & Chr(34) & "/>"
+        ElseIf type = "link" Then
+            snippet = "<a href=" & Chr(34) & Chr(34) & "></a>"
+        ElseIf type = "button" Then
+            snippet = "<button onclick=" & Chr(34) & Chr(34) & "></button>"
+        ElseIf type = "link-css" Then
+            snippet = "<link rel=" & Chr(34) & "stylesheet" & Chr(34) & "type=" & Chr(34) & "text/css" & Chr(34) & "href=" & Chr(34) & "styles.css" & Chr(34) & "/>"
+        ElseIf type = "script" Then
+            snippet = "<script></script>"
+        ElseIf type = "script-ext" Then
+            snippet = "<script src=" & Chr(34) & Chr(34) & ">"
+        End If
+
+        DeathNoteEditor.SelectedText = snippet
+    End Sub
+
+    Private Sub ParágrafoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParágrafoToolStripMenuItem.Click
+        HandleHTMLWrapTag("p")
+    End Sub
+
+    Private Sub SpanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpanToolStripMenuItem.Click
+        HandleHTMLWrapTag("span")
+    End Sub
+
+    Private Sub H1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H1ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h1")
+    End Sub
+
+    Private Sub H2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H2ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h2")
+    End Sub
+
+    Private Sub H3ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H3ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h3")
+    End Sub
+
+    Private Sub H4ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H4ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h4")
+    End Sub
+
+    Private Sub H5ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H5ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h5")
+    End Sub
+
+    Private Sub H6ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles H6ToolStripMenuItem.Click
+        HandleHTMLWrapTag("h6")
+    End Sub
+
+    Private Sub DivToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DivToolStripMenuItem.Click
+        HandleHTMLWrapTag("div")
+    End Sub
+
+    Private Sub InputToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InputToolStripMenuItem.Click
+        HandleAddHTMLSnippet("input")
+    End Sub
+
+    Private Sub ImagemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImagemToolStripMenuItem.Click
+        HandleAddHTMLSnippet("img")
+    End Sub
+
+    Private Sub LinkToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LinkToolStripMenuItem1.Click
+        HandleAddHTMLSnippet("link")
+    End Sub
+
+    Private Sub BotãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BotãoToolStripMenuItem.Click
+        HandleAddHTMLSnippet("button")
+    End Sub
+
+    Private Sub MainToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MainToolStripMenuItem.Click
+        HandleHTMLWrapTag("main")
+    End Sub
+
+    Private Sub HeaderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HeaderToolStripMenuItem.Click
+        HandleHTMLWrapTag("header")
+    End Sub
+
+    Private Sub FolhaDeEstiloExternaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolhaDeEstiloExternaToolStripMenuItem.Click
+        HandleAddHTMLSnippet("link-css")
+    End Sub
+
+    Private Sub ScriptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScriptToolStripMenuItem.Click
+        HandleAddHTMLSnippet("script")
+    End Sub
+
+    Private Sub ScriptExternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScriptExternoToolStripMenuItem.Click
+        HandleAddHTMLSnippet("script-ext")
+    End Sub
 End Class
