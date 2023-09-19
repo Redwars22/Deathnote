@@ -354,4 +354,66 @@ Public Class MainForm
             QuebraDeLinhaToolStripMenuItem.Checked = True
         End If
     End Sub
+
+    Private Sub HandleAddMarkdownSnippets(before As String, after As String)
+        DeathNoteEditor.SelectedText = before + DeathNoteEditor.SelectedText + after
+    End Sub
+
+    Private Sub TítuloToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TítuloToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("# ", "")
+    End Sub
+
+    Private Sub SubtítuloNível1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubtítuloNível1ToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("## ", "")
+    End Sub
+
+    Private Sub SubtítuloNível2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubtítuloNível2ToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("### ", "")
+    End Sub
+
+    Private Sub ItemDeListaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemDeListaToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("- ", "")
+    End Sub
+
+    Private Sub LinkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LinkToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("[", "](https://)")
+    End Sub
+
+    Private Sub CódigoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CódigoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("`", "`")
+    End Sub
+
+    Private Sub CitaçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CitaçãoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("> ", "")
+    End Sub
+
+    Private Sub BlocoDeCódigoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlocoDeCódigoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("```" + vbCrLf, vbCrLf + "```")
+    End Sub
+
+    Private Sub NegritoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NegritoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("**", "**")
+    End Sub
+
+    Private Sub ItálicoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItálicoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("*", "*")
+    End Sub
+
+    Private Sub ItálicoENegritoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItálicoENegritoToolStripMenuItem.Click
+        HandleAddMarkdownSnippets("***", "***")
+    End Sub
+
+    Private Sub LinhaHorizontalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LinhaHorizontalToolStripMenuItem.Click
+        DeathNoteEditor.SelectedText = vbCrLf + "---" + vbCrLf
+    End Sub
+
+    Private Async Sub HandleWebView(url As String)
+        HTMLView.Show()
+        Await HTMLView.WebView21.EnsureCoreWebView2Async()
+        HTMLView.WebView21.Source = "https://google.com"
+    End Sub
+
+    Private Sub NotasDeVersãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotasDeVersãoToolStripMenuItem.Click
+
+    End Sub
 End Class
