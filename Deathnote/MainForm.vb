@@ -2,7 +2,7 @@
 Imports System.Drawing.Printing
 
 Public Class MainForm
-    Dim fileTypes As String = ""
+    Dim fileTypes As String = "Arquivo Deathnote|*.dth|RichTextFormat|*.rtf|Arquivos de Texto|*.|Todos os Arquivos|*.*"
     Dim clipboard As String
     Dim statusBarVisible As Boolean = True
     Dim theme As String
@@ -40,7 +40,7 @@ Public Class MainForm
     End Sub
 
     Public Sub HandleSave()
-        'SaveFileDialog1.Filter = "Arquivo Deathnote (*.dth^)|*.dth^"'
+        SaveFileDialog1.Filter = fileTypes
 
         SaveFileDialog1.CheckFileExists = True
         SaveFileDialog1.CheckPathExists = True
@@ -73,7 +73,7 @@ Public Class MainForm
     Private Sub AbrirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrirToolStripMenuItem.Click
         Dim fileReader As System.IO.StreamReader
 
-        'OpenFileDialog1.Filter = "Arquivo Deathnote (*.dth^)|*.txt^"'
+        OpenFileDialog1.Filter = fileTypes
         OpenFileDialog1.CheckFileExists = True
         OpenFileDialog1.Title = "Escolha um arquivo"
 
@@ -410,10 +410,14 @@ Public Class MainForm
     Private Async Sub HandleWebView(url As String)
         HTMLView.Show()
         Await HTMLView.WebView21.EnsureCoreWebView2Async()
-        HTMLView.WebView21.Source = "https://google.com"
+        HTMLView.WebView21.CoreWebView2.Navigate(url)
     End Sub
 
     Private Sub NotasDeVersãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotasDeVersãoToolStripMenuItem.Click
+        HandleWebView("https://github.com/Redwars22/Deathnote/releases")
+    End Sub
 
+    Private Sub SiteOficialDoAndrewNationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SiteOficialDoAndrewNationToolStripMenuItem.Click
+        HandleWebView("https://andrewnationdev.vercel.app")
     End Sub
 End Class

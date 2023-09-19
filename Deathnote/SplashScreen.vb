@@ -4,7 +4,7 @@
     '  no Designer de Projeto ("Propriedades" dentro do menu "Projetos").
 
 
-    Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Configura o texto do diálogo em tempo de execução de acordo com a informação do assembly da aplicação.  
 
         'TODO: Personalize a informação do assembly da aplicação no painel "Aplicação" do diálogo 
